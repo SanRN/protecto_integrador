@@ -4,13 +4,15 @@ import {
   creatZona,
   updateZona,
   getZona,
-} from "../controllers/zona.contollers.js";
+} from "../controllers/zona.controller.js";
 const router = Router();
 
 router.get("/viewZona", getZonas);
 router.post("/addZona", creatZona);
-router.put("/updateZona/id_zona", updateZona);
+router.put("/updateZona/:id_zona", updateZona);
+router.put("/updateZona/name/:name", updateZona);
 router.delete("/deleteZona/id");
 router.get("/viewZona/:id_zona", getZona);
+router.get("/viewZona/name/:name", getZona);
 
 export default router;

@@ -3,7 +3,7 @@ import {
   getPilas,
   creatPilas,
   getPila,
-} from "../controllers/pilas.controllers.js";
+} from "../controllers/pilas.controller.js";
 
 const router = Router();
 

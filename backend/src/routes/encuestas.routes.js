@@ -11,7 +11,7 @@ import {
   getRespuesta,
   getRespuestas,
   creatRespuesta,
-} from "../controllers/encuesta.controllers.js";
+} from "../controllers/encuesta.controller.js";
 
 const router = Router();
 

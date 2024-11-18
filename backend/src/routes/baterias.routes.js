@@ -3,7 +3,7 @@ import {
   getBateria,
   getBaterias,
   creatBaterias,
-} from "./../controllers/baterias.controllers.js";
+} from "./../controllers/baterias.controller.js";
 
 const router = Router();
 
@@ -11,6 +11,6 @@ router.get("/viewBaterias", getBaterias);
 router.post("/addBaterias", creatBaterias);
 router.put("/updateBaterias/id");
 router.delete("/deleteBaterias/id");
-router.get("/viewBaterias/:id_bateria", getBateria);
+router.get("/viewBaterias/:id_baterias", getBateria);
 
 export default router;

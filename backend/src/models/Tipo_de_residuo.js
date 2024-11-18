@@ -12,16 +12,20 @@ export const Tipo_de_residuo = dataBase.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    material: {
+    dimension:{
       type: DataTypes.STRING(),
       unique: true,
+    },
+    material: {
+      type: DataTypes.TEXT(),
+      
     },
     contaminacion: {
-      type: DataTypes.STRING(),
+      type: DataTypes.TEXT(),
     },
     procedimiento: {
-      type: DataTypes.STRING(),
-      unique: true,
+      type: DataTypes.TEXT(),
+      
     },
   },
   {
