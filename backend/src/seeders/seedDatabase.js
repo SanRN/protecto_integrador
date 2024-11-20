@@ -75,7 +75,7 @@ export const createRols = async () => {
       { rol_name: "visitante" },
     ];
     await Rols.bulkCreate(Roles);
-    const createRols = Rols.findAll;
+    const createRols = await Rols.findAll();
     createRols.forEach((rols) => {
       console.log(
         "ID " + rols.id_rols + ", name: " + rols.rol_name

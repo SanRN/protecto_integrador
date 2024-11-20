@@ -27,7 +27,7 @@ export const creatZona = async (req, res) => {
       name,
       cor_x,
       cor_y,
-      estado: false
+      estado: false,
     });
     res.json(newZona);
   } catch (error) {
@@ -120,8 +120,15 @@ export const countZone = async (zona) => {
 };
 
 export const getZoneFlase = async (req, res) => {
-  const zonaFlase = await Zona_de_reciclaje.findAll({
-    where:{estado: false}
-  })
-  res.json(zonaFlase);
-}
+  try {
+    const zonaFlase = await Zona_de_reciclaje.findAll({
+      where: { estado: false },
+      attributes: {
+        exclude: ["latitude", "longitude", "advertencia", "estado", "tipo_de_residuo"],
+      },
+    });
+    res.json(zonaFlase);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+};

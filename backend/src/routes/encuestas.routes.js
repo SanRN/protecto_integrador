@@ -1,12 +1,11 @@
 import { Router } from "express";
 import {
-  getEncuesta,
-  createEncuesta,
+  createEncuesta
 } from "../controllers/encuesta.controller.js";
 
 const router = Router();
 
-router.get("/viewEncuesta/:id_encuesta", getEncuesta);
+router.get("/viewEncuesta/:id_encuesta",);
 router.post("/addEncuestas", createEncuesta);
 
 export default router;
