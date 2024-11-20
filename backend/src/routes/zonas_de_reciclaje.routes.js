@@ -4,10 +4,12 @@ import {
   creatZona,
   updateZona,
   getZona,
+  getZoneFlase
 } from "../controllers/zona.controller.js";
 const router = Router();
 
 router.get("/viewZona", getZonas);
+router.get("/viewZonaF", getZoneFlase);
 router.post("/addZona", creatZona);
 router.put("/updateZona/:id_zona", updateZona);
 router.put("/updateZona/name/:name", updateZona);

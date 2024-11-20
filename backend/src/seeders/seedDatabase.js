@@ -106,10 +106,11 @@ export const createAdmin = async () => {
 export const createZona = async () => {
     try{
         const lotes = [
-            {  name: "Lote 1", latitude: 8.2405, longitude: -73.3287, advertencia: false, tipo_de_residuo: 1},
-            {  name: "Lote 2", latitude: 8.2406, longitude: -73.3286, advertencia: false, tipo_de_residuo: 2},
-            {  name: "Lote 3", latitude: 8.2407, longitude: -73.3288, advertencia: false, tipo_de_residuo: 3},
-            { name: "Lote 4", latitude: 8.2410, longitude: -73.3290, advertencia: true, tipo_de_residuo: 4},
+            {  id_zona:0 ,name: "Lote de reciclaje", latitude: 8, longitude: -73, advertencia: false, tipo_de_residuo: 5, estado:false},
+            {  name: "Lote 1", latitude: 8.2405, longitude: -73.3287, advertencia: false, tipo_de_residuo: 1, estado:false},
+            {  name: "Lote 2", latitude: 8.2406, longitude: -73.3286, advertencia: false, tipo_de_residuo: 2, estado:false},
+            {  name: "Lote 3", latitude: 8.2407, longitude: -73.3288, advertencia: false, tipo_de_residuo: 3, estado:false},
+            { name: "Lote 4", latitude: 8.2410, longitude: -73.3290, advertencia: true, tipo_de_residuo: 4, estado:false},
         ];
         await Zona_de_reciclaje.bulkCreate(lotes);
     }catch (error){

@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import { dataBase } from "./../config/dataBase.js";
-import { Respuestas } from "./Respuestas.js";
+import { Encuesta } from "./Encuesta.js";
 
 export const User = dataBase.define(
   "User",
@@ -28,12 +28,12 @@ export const User = dataBase.define(
   }
 );
 
-User.hasMany(Respuestas, {
+User.hasMany(Encuesta, {
   foreignKey: "users",
   sourceKey: "id",
 });
 
-Respuestas.belongsTo(User, {
+Encuesta.belongsTo(User, {
   foreignKey: "users",
   sourceKey: "id",
 });

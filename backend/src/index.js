@@ -9,8 +9,8 @@ async function main() {
     createRols();
     createAdmin();
     createZona();
-    app.listen(3000, () => {
-      console.log("server listen on http://localhost:3000/");
+    app.listen(3000, '0.0.0.0', () => {
+      console.log("server listen on http://192.168.1.11:3000/");
     });
   } catch (error) {
     console.log("Unable to connect to the datatabase", error);

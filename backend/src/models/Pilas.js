@@ -9,9 +9,9 @@ export const Pilas = dataBase.define(
         primaryKey: true,
         autoIncrement: true,
       },
-      estado:{
+      estado :{
         type: DataTypes.BOOLEAN(),
-        unique: true,
+        allowNull: false
       }
     },
   );

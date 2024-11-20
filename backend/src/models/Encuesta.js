@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import { dataBase } from "./../config/dataBase.js";
-import { Preguntas } from "./Preguntas.js";
 
 export const Encuesta = dataBase.define("Encuesta", {
   id_encuesta: {
@@ -8,16 +7,13 @@ export const Encuesta = dataBase.define("Encuesta", {
     primaryKey: true,
     autoIncrement: true,
   },
-  titulo: {
+  Pregunta_1: {
     type: DataTypes.STRING(),
   },
-});
-Encuesta.hasMany(Preguntas, {
-  foreignKey: "encuesta",
-  sourceKey: "id_encuesta",
-});
-
-Preguntas.belongsTo(Encuesta, {
-  foreignKey: "encuesta",
-  sourceKey: "id_encuesta",
+  Pregunta_2: {
+    type: DataTypes.STRING(),
+  },
+  Pregunta_3: {
+    type: DataTypes.STRING(),
+  },
 });
