@@ -101,7 +101,7 @@ export const countZone = async (zona) => {
     });
 
     // Si hay 3 pilas, actualizar el estado de la zona
-    if (count === 3) {
+    if (count === 3000) {
       const zonaEstado = await Zona_de_reciclaje.findOne({
         where: { id_zona: zona },
       });

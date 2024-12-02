@@ -8,40 +8,40 @@ export const getEstadisticaE = async (req, res) => {
   try {
     const countTotal = await Encuesta.count();
     const countPreg1_1 = await Encuesta.count({
-      where: { Pregunta_1: "Menos de 5" },
+      where: { Pregunta_1: "menos_5" },
     });
     const countPreg1_2 = await Encuesta.count({
-      where: { Pregunta_1: "Entre 5 y 20" },
+      where: { Pregunta_1: "entre_5_10" },
     });
     const countPreg1_3 = await Encuesta.count({
-      where: { Pregunta_1: "Entre 21 y 50" },
+      where: { Pregunta_1: "entre_21_30" },
     });
     const countPreg1_4 = await Encuesta.count({
-      where: { Pregunta_1: "Mas de 50" },
+      where: { Pregunta_1: "mas_30" },
     });
     const countPreg2_1 = await Encuesta.count({
-      where: { Pregunta_2: "Si, conozco varios lugares" },
+      where: { Pregunta_2: "si" },
     });
     const countPreg2_2 = await Encuesta.count({
-      where: { Pregunta_2: "sé que hay, pero no sé dónde están" },
+      where: { Pregunta_2: "nose" },
     });
     const countPreg2_3 = await Encuesta.count({
-      where: { Pregunta_2: "No, no tengo idea de que existan" },
+      where: { Pregunta_2: "no" },
     });
     const countPreg2_4 = await Encuesta.count({
-      where: { Pregunta_2: "No estoy seguro/a" },
+      where: { Pregunta_2: "inseguro" },
     });
     const countPreg3_1 = await Encuesta.count({
-      where: { Pregunta_3: "Las tiro a la basura común" },
+      where: { Pregunta_3: "tirar" },
     });
     const countPreg3_2 = await Encuesta.count({
-      where: { Pregunta_3: "Las guardo en casa" },
+      where: { Pregunta_3: "guardar" },
     });
     const countPreg3_3 = await Encuesta.count({
-      where: { Pregunta_3: "Las llevo a un punto de recolección" },
+      where: { Pregunta_3: "llevar" },
     });
     const countPreg3_4 = await Encuesta.count({
-      where: { Pregunta_3: "No uso pilas" },
+      where: { Pregunta_3: "no_usar" },
     });
     const totalData = {
       totalEncuestas: countTotal,

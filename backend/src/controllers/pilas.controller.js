@@ -31,7 +31,7 @@ export const creatPilas = async (req, res) => {
     const zonaR = await Zona_de_reciclaje.findOne({
       where: { id_zona: zona },
     });
-    if (zonaR.tipo_de_residuo === tipo.id_residuos) {
+    if (zonaR.tipo_de_residuo === tipo.id_residuos || zonaR.id_zona== 0) {
       if (estado) {
         newPila = await Pilas.create({
           tipo_de_residuo: tipo.id_residuos,
@@ -39,7 +39,7 @@ export const creatPilas = async (req, res) => {
           zona: 0,
         });
       } else {
-        if ((await Pilas.count({ where: { zona } })) > 2) {
+        if ((await Pilas.count({ where: { zona } })) > 2999) {
           res.status(500).json({ message: "la zona" + zona + " esta llena" });
         } else {
           console.log(await Pilas.count({ where: { zona } }));

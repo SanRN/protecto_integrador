@@ -21,3 +21,12 @@ export const createEncuesta = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
+export const getEncuesta = async (req,res) => {
+  try{
+    const EncuestaAll = await Encuesta.findAll()
+    res.json(EncuestaAll);
+  }catch (error){
+    res.status(500).json({message: error.message});
+  }
+}
